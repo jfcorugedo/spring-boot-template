@@ -16,7 +16,7 @@ public class TextControllerIT extends BaseIT {
 
 	@Test
 	public void testGetText() {
-		String sampleText = getTemplate().getForObject(getBase() + "test/i18n?key=sample.text", String.class);
+		String sampleText = getRestTemplate().getForObject(getBase() + "test/i18n?key=sample.text", String.class);
 		
 		assertThat(sampleText).isEqualTo("What ever happened to you?");
 	}

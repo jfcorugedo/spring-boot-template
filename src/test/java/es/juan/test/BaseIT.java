@@ -13,12 +13,12 @@ public class BaseIT {
     private int port;
 
 	private URL base;
-	private OAuth2RestTemplate template;
+	private OAuth2RestTemplate restTemplate;
 
 	@Before
 	public void setUp() throws Exception {
 		this.base = new URL("http://localhost:" + port + "/");
-		template = buildOauthRestTemplate();
+		restTemplate = buildOauthRestTemplate();
 	}
 	
 	private OAuth2RestTemplate buildOauthRestTemplate() {
@@ -39,8 +39,8 @@ public class BaseIT {
 		return base;
 	}
 
-	public OAuth2RestTemplate getTemplate() {
-		return template;
+	public OAuth2RestTemplate getRestTemplate() {
+		return restTemplate;
 	}
 
 }

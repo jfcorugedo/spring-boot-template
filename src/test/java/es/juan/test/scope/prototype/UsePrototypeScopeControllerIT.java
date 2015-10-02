@@ -18,8 +18,8 @@ public class UsePrototypeScopeControllerIT extends BaseIT {
 
 	@Test
 	public void testGetDifferentRandomNumbersInEachRequest() {
-		PrototypeComponent response1 = getTemplate().getForObject(getBase().toString() + "test/scope/prototype", PrototypeComponent.class);
-		PrototypeComponent response2 = getTemplate().getForObject(getBase().toString() + "test/scope/prototype", PrototypeComponent.class);
+		PrototypeComponent response1 = getRestTemplate().getForObject(getBase().toString() + "test/scope/prototype", PrototypeComponent.class);
+		PrototypeComponent response2 = getRestTemplate().getForObject(getBase().toString() + "test/scope/prototype", PrototypeComponent.class);
 		
 		assertThat(response1.getNumber()).isNotEqualTo(response2.getNumber());
 	}
